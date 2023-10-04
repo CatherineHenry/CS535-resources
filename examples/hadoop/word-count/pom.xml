@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>groupId</groupId>
+    <artifactId>word-count</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+<!--            🐍 $mvn install:install-file -Dfile=/usr/local/Cellar/hadoop/3.3.6/libexec/share/hadoop/mapreduce/hadoop-mapreduce-client-core-3.3.6.jar -DgroupId=hadoop -DartifactId=hadoop-mapreduce-client-core -Dversion=3.3.6 -Dpackaging=system-->
+            <artifactId>hadoop-mapreduce-client-core</artifactId>
+            <groupId>hadoop</groupId>
+            <version>3.3.6</version>
+<!--            <scope>system</scope>-->
+<!--            <systemPath>/usr/local/Cellar/hadoop/3.3.6/libexec/share/hadoop/mapreduce/hadoop-mapreduce-client-core-3.3.6.jar</systemPath>-->
+        </dependency>
+        <dependency>
+<!--            🐍 $mvn install:install-file -Dfile=/usr/local/Cellar/hadoop/3.3.6/libexec/share/hadoop/common/hadoop-common-3.3.6.jar -DgroupId=hadoop -DartifactId=hadoop-common -Dversion=3.3.6 -Dpackaging=system-->
+            <artifactId>hadoop-common</artifactId>
+            <groupId>hadoop</groupId>
+            <version>3.3.6</version>
+<!--            <scope>system</scope>-->
+<!--            <systemPath>/usr/local/Cellar/hadoop/3.3.6/libexec/share/hadoop/common/hadoop-common-3.3.6.jar</systemPath>-->
+        </dependency>
+        <dependency>
+<!--            🐍 $mvn install:install-file -Dfile=/usr/local/Cellar/hadoop/3.3.6/libexec/share/hadoop/hdfs/lib/commons-cli-1.2.jar -DgroupId=hadoop -DartifactId=commons-cli -Dversion=1.2 -Dpackaging=system-->
+            <artifactId>commons-cli</artifactId>
+            <groupId>hadoop</groupId>
+            <version>1.2</version>
+<!--            <scope>system</scope>-->
+<!--            <systemPath>/usr/local/Cellar/hadoop/3.3.6/libexec/share/hadoop/hdfs/lib/commons-cli-1.2.jar</systemPath>-->
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>.</sourceDirectory>
+        <plugins>
+            <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>WordCount</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+
+            </plugin>
+        </plugins>
+    </build>
+    
+</project>
